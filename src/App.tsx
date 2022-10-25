@@ -1,9 +1,11 @@
-import React, {useRef, useState} from 'react';
+import React, {useState} from 'react';
 import CardView from "./CardView/CardView";
 import Card from "./lib/Card";
 import CardDeck from "./lib/CardDeck";
 import './App.css';
 import PokerHand from "./lib/PokerHand";
+
+let user:string = "";
 
 function App() {
   const [cards, setCards] = useState<Card[]>([]);
@@ -12,7 +14,7 @@ function App() {
     const deck = new CardDeck();
     const userHand = deck.getCards(5);
     const pokerHand = new PokerHand(userHand);
-    pokerHand.getOutCome();
+    user = pokerHand.getOutCome();
     setCards(userHand);
   }
 
@@ -35,6 +37,7 @@ function App() {
           <CardView rank={cards[3].rank} suit={cards[3].suit}/>
           <CardView rank={cards[4].rank} suit={cards[4].suit}/>
         </div>
+        <span>{user}</span>
       </div>
     );
   }

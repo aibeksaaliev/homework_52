@@ -44,8 +44,6 @@ class PokerHand {
       default:
         pokerHand = "0";
     }
-
-    console.log(pokerHand);
     return pokerHand;
   }
 }
