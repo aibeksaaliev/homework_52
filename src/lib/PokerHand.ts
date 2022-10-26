@@ -35,6 +35,9 @@ class PokerHand {
       case 6:
         pokerHand = "Three of a kind";
         break;
+      case 8:
+        pokerHand = "Full house";
+        break;
       case 12:
         pokerHand = "Four of a kind";
         break;
